@@ -61,3 +61,12 @@ src/test_plugin
 src/testzip.*
 src/zcg*zip
 ar-lib
+
+# Windows
+*.suo
+*.sdf
+*.opensdf
+*.user
+ipch/
+Win32/
+x64/
