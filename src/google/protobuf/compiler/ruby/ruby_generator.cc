@@ -30,6 +30,7 @@
 
 #include <sstream>
 
+#include <google/protobuf/stubs/common.h>
 #include <google/protobuf/compiler/code_generator.h>
 #include <google/protobuf/compiler/plugin.h>
 #include <google/protobuf/descriptor.h>
@@ -47,7 +48,7 @@ namespace compiler {
 namespace ruby {
 
 // Forward decls.
-std::string IntToString(uint32_t value);
+std::string IntToString(uint32 value);
 std::string StripDotProto(const std::string& proto_file);
 std::string LabelForField(google::protobuf::FieldDescriptor* field);
 std::string TypeName(google::protobuf::FieldDescriptor* field);
@@ -64,7 +65,7 @@ void GenerateEnumAssignment(
     const google::protobuf::EnumDescriptor* en,
     google::protobuf::io::Printer* printer);
 
-std::string IntToString(uint32_t value) {
+std::string IntToString(uint32 value) {
   std::ostringstream os;
   os << value;
   return os.str();
